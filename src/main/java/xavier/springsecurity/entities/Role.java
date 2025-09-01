@@ -40,7 +40,17 @@ public class Role {
     }
 
     public enum Values {
-        BASIC,
-        ADMIN;
+        BASIC(2L),
+        ADMIN(2l);
+
+        long roleId;
+
+        Values(long roleId){
+            this.roleId =roleId;
+        }
+
+        public long getRoleId() {
+            return roleId;
+        }
     }
 }
