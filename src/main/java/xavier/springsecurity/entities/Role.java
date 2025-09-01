@@ -1,18 +1,14 @@
 package xavier.springsecurity.entities;
 
 import jakarta.persistence.*;
-
 @Entity
 @Table(name = "tb_roles")
 public class Role {
 
-    private Long roleId;
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="role_id")
-    private Long getRoleId;
-
+    @Column(name = "role_id")
+    private Long roleId;
     private String name;
 
     public Long getRoleId() {
@@ -21,14 +17,6 @@ public class Role {
 
     public void setRoleId(Long roleId) {
         this.roleId = roleId;
-    }
-
-    public Long getGetRoleId() {
-        return getRoleId;
-    }
-
-    public void setGetRoleId(Long getRoleId) {
-        this.getRoleId = getRoleId;
     }
 
     public String getName() {
@@ -40,13 +28,14 @@ public class Role {
     }
 
     public enum Values {
-        BASIC(2L),
-        ADMIN(2l);
+
+        ADMIN(1L),
+        BASIC(2L);
 
         long roleId;
 
-        Values(long roleId){
-            this.roleId =roleId;
+        Values(long roleId) {
+            this.roleId = roleId;
         }
 
         public long getRoleId() {
